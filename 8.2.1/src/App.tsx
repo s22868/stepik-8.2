@@ -1,4 +1,5 @@
 import * as React from 'react'
+import PropTypes from 'prop-types'
 import {
   BrowserRouter as Router,
   Route,
@@ -15,6 +16,11 @@ const Contact: React.FC<{ countryCode?: 'pl' | 'us' | 'de' }> = ({
 }) => {
   return <h1>Kontakt {countryCode}</h1>
 }
+
+Contact.propTypes = {
+  countryCode: PropTypes.oneOf(['pl', 'us', 'de']),
+}
+
 const NotFound: React.FC = () => {
   const location = useLocation()
   return <h1>Nie znaleziono elementu: {location.pathname}</h1>
