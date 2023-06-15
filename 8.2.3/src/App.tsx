@@ -1,23 +1,15 @@
-import React from 'react';
+import * as React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Photo from './components/photo/Photo'
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path="/:photoIndex?" Component={Photo} />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App
